@@ -1,0 +1,70 @@
+<template>
+	<v-flex class="pr-3 pb-3" xs12 md6 lg4>
+		<v-card class="blue darken-3 white--text">
+			<v-card-title class="headline">
+				<strong>
+					{{ stock.name }}
+					<small>
+						(Preço: {{ stock.price | currencyFilter }} | Qtd:
+						{{ stock.quantity }})
+					</small>
+				</strong>
+			</v-card-title>
+		</v-card>
+		<v-card>
+			<v-container fill-height>
+				<v-text-field
+					label="Quantidade"
+					type="number"
+					v-model.number="quantity"
+					:error="insufficientQuantity || !Number.isInteger(quantity)"
+				/>
+				<v-btn
+					class="blue darken-3 white--text"
+					@click="sellStock"
+					:disabled="
+						insufficientQuantity ||
+						quantity <= 0 ||
+						!Number.isInteger(quantity)
+					"
+				>
+					{{ insufficientQuantity ? "Insuficiente" : "Vender" }}
+				</v-btn>
+			</v-container>
+		</v-card>
+	</v-flex>
+</template>
+
+<script>
+import { currencyFilter } from "@/filters/currency";
+import { mapActions } from "vuex";
+
+export default {
+	props: ["stock"],
+	data: () => ({
+		quantity: 0,
+	}),
+	computed: {
+		insufficientQuantity() {
+			return this.quantity > this.stock.quantity;
+		},
+	},
+	methods: {
+		...mapActions({ sellStockAction: "sellStock" }),
+		sellStock() {
+			const order = {
+				stockId: this.stock.id,
+				stockPrice: this.stock.price,
+				quantity: this.quantity,
+			};
+			this.sellStockAction(order);
+			this.quantity = 0;
+		},
+	},
+	filters: {
+		currencyFilter,
+	},
+};
+</script>
+
+<style></style>
