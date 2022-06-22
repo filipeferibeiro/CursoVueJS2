@@ -27,6 +27,7 @@
     "pm2": "^5.2.0"
   },
   "devDependencies": {
+    "@types/bcrypt-nodejs": "^0.0.31",
     "nodemon": "^2.0.16"
   }
 }

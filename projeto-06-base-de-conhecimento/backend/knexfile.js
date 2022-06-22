@@ -1,16 +1,11 @@
 // Update with your config settings.
-
+const { db } = require("./.env");
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
 	client: "pg",
-	connection: {
-		host: "127.0.0.1",
-		port: "5432",
-		database: "knowledge",
-		user: "postgres",
-	},
+	connection: db,
 	pool: {
 		min: 2,
 		max: 10,
