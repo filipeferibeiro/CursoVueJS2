@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import Home from "@/components/home/Home";
+import AppHome from "@/components/home/AppHome";
 import AdminPages from "@/components/admin/AdminPages";
 
 Vue.use(VueRouter);
@@ -10,7 +10,7 @@ const routes = [
 	{
 		name: "home",
 		path: "/",
-		component: Home,
+		component: AppHome,
 	},
 	{
 		name: "adminPages",

@@ -6,7 +6,7 @@
 import { mapState } from "vuex";
 
 export default {
-	name: "Menu",
+	name: "AppMenu",
 	computed: mapState(["isMenuVisible"]),
 };
 </script>

@@ -1,25 +1,25 @@
 <template>
 	<div id="app" :class="{ 'hide-menu': !isMenuVisible }">
-		<Header
+		<AppHeader
 			title="Cod3r - Base de Conhecimento"
 			:hideToggle="false"
 			:hideUserDropdown="false"
 		/>
-		<Menu />
-		<Content />
-		<Footer />
+		<AppMenu />
+		<AppContent />
+		<AppFooter />
 	</div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import Header from "@/components/template/Header.vue";
-import Menu from "@/components/template/Menu.vue";
-import Content from "@/components/template/Content.vue";
-import Footer from "@/components/template/Footer.vue";
+import AppHeader from "@/components/template/AppHeader.vue";
+import AppMenu from "@/components/template/AppMenu.vue";
+import AppContent from "@/components/template/AppContent.vue";
+import AppFooter from "@/components/template/AppFooter.vue";
 export default {
 	name: "App",
-	components: { Header, Menu, Content, Footer },
+	components: { AppHeader, AppMenu, AppContent, AppFooter },
 	computed: mapState(["isMenuVisible"]),
 };
 </script>

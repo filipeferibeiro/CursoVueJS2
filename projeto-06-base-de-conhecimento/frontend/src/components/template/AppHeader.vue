@@ -15,7 +15,7 @@
 <script>
 import UserDropdown from "./UserDropdown.vue";
 export default {
-	name: "Header",
+	name: "AppHeader",
 	props: {
 		title: String,
 		hideToggle: Boolean,
