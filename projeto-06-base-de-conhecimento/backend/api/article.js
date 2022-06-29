@@ -35,10 +35,7 @@ module.exports = (app) => {
 		const articleId = req.params.id;
 
 		try {
-			const rowsDeleted = await app
-				.db("articles")
-				.where({ id: articleId })
-				.del();
+			const rowsDeleted = await app.db("articles").where({ id: articleId }).del();
 
 			try {
 				existsOrError(rowsDeleted, "Artigo não foi encontrado.");
@@ -52,7 +49,7 @@ module.exports = (app) => {
 		}
 	};
 
-	const limit = 3; // usado para paginação
+	const limit = 10; // usado para paginação
 
 	const get = async (req, res) => {
 		const page = req.query.page || 1;
@@ -81,12 +78,9 @@ module.exports = (app) => {
 
 	const getByCategory = async (req, res) => {
 		const categoryId = req.params.id;
-		const page = req.params.page || 1;
+		const page = req.query.page || 1;
 
-		const categories = await app.db.raw(
-			queries.categoryWithChildren,
-			categoryId
-		);
+		const categories = await app.db.raw(queries.categoryWithChildren, categoryId);
 		const ids = categories.rows.map((category) => category.id);
 
 		app.db({ a: "articles", u: "users" })

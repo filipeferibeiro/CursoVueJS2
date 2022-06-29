@@ -13,7 +13,7 @@
     "bootstrap-vue": "^2.22.0",
     "font-awesome": "4.7.0",
     "highlightjs": "9.10.0",
-    "liquor-tree": "0.2.32",
+    "liquor-tree": "^0.2.70",
     "vue": "2.6.12",
     "vue-gravatar": "1.2.1",
     "vue-mq": "0.2.1",

@@ -3911,10 +3911,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
-liquor-tree@0.2.32:
-  version "0.2.32"
-  resolved "https://registry.npmjs.org/liquor-tree/-/liquor-tree-0.2.32.tgz"
-  integrity sha512-5TEKeNlSX2JUKTEYhqzuJ2POprXsCfdU9cf26U3W5BAf7PSW5Prk4jAUXCOYc4guRPWLDgO6+qf05oqdiKc4Jw==
+liquor-tree@^0.2.70:
+  version "0.2.70"
+  resolved "https://registry.yarnpkg.com/liquor-tree/-/liquor-tree-0.2.70.tgz#451ec5a0041994f82f895f1fe47c8cc81a034845"
+  integrity sha512-5CiMlDVmuveYwwc27mYe1xZ3J4aHhZBErUhIp9ov4v4wIBso+s5JAByOOit4iOCMCQ5ODd8VggbKymzZREYbBQ==
 
 loader-runner@^4.1.0, loader-runner@^4.2.0:
   version "4.3.0"
